@@ -1,0 +1,2 @@
+# SimpleAlgorithm
+Traditional algorithms
