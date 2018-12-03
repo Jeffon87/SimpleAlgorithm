@@ -18,5 +18,6 @@ void myMemCpy(char *a, char *b, int counts, int bPrint);
 void HeapSort(int *a, int size);
 void TestMergeSort(void);
 void QuickSort(int *a, int left, int right);
-
+ void KMP_PatternMatch(void);
+ 
 #endif
