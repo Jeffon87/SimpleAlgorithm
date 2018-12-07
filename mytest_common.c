@@ -1,11 +1,26 @@
 #include "algrithmtest.h"
 
+void PrintCharArray(char *array, unsigned int arrayLength, char *flagStr)
+{
+    int i, k;
+    int key;
+
+    if(flagStr != NULL)
+        printf("[%s] The string is:\n", flagStr);
+
+    for(i=0; i<arrayLength; i++)
+    {
+        printf("%c ", array[i]);
+    }
+    printf("\n");
+}
+
 void PrintArray(int *array, unsigned int arrayLength, char *flagStr)
 {
     int i, k;
     int key;
 
-    printf("[%s] The array is:\n", flagStr);
+    printf("[%s] The int array is:\n", flagStr);
     for(i=0; i<arrayLength; i++)
     {
         printf("%d ", array[i]);
