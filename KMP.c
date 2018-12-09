@@ -1,4 +1,5 @@
-#include "algrithmtest.h"
+#include "MySort.h"
+#include "mytest_common.h"
 #ifdef FUNCTEST
 #include "testarray.h"
 #endif
@@ -10,39 +11,39 @@
      2.2) 数组大小为待匹配子串的长度,内容为当对应字符不匹配时下一匹配位置的信息.
  */
 void GenerateLpsArray(char *pat, int  M, int *lps)
-    { 
-    // length of the previous longest prefix suffix 
-    int len = 0; 
+{
+    // length of the previous longest prefix suffix
+    int len = 0;
 
-    lps[0] = 0; // lps[0] is always 0 
+    lps[0] = 0; // lps[0] is always 0
 
-    // the loop calculates lps[i] for i = 1 to M-1 
-    int i = 1; 
-    while (i < M) { 
-        if (pat[i] == pat[len]) { 
-            len++; 
-            lps[i] = len; 
-            i++; 
-        } 
-        else // (pat[i] != pat[len]) 
-        { 
-            // This is tricky. Consider the example. 
-            // AAACAAAA and i = 7. The idea is similar 
-            // to search step. 
-            if (len != 0) { 
-                len = lps[len - 1]; 
+    // the loop calculates lps[i] for i = 1 to M-1
+    int i = 1;
+    while (i < M) {
+        if (pat[i] == pat[len]) {
+            len++;
+            lps[i] = len;
+            i++;
+        }
+        else // (pat[i] != pat[len])
+        {
+            // This is tricky. Consider the example.
+            // AAACAAAA and i = 7. The idea is similar
+            // to search step.
+            if (len != 0) {
+                len = lps[len - 1];
 
-                // Also, note that we do not increment 
-                // i here 
-            } 
-            else // if (len == 0) 
-            { 
-                lps[i] = 0; 
-                i++; 
-            } 
-        } 
-    } 
+                // Also, note that we do not increment
+                // i here
+            }
+            else // if (len == 0)
+            {
+                lps[i] = 0;
+                i++;
+            }
+        }
     }
+}
 
 // 提取待匹配字符串的信息.
 /*
@@ -123,7 +124,8 @@ void KMP_PatternMatch(const char *inputStr, int inputStrLen, const char *pattern
     int k = 0;
     int *lps = NULL;
 
-    PrintCharArray(inputStr, inputStrLen, __FUNCTION__);
+    PrintCharArray(inputStr, inputStrLen, "KMP_PatternMatch - inputStr");
+    PrintCharArray(pattern, patternLen, "KMP_PatternMatch - pattern");
     
     lps = (int*)malloc(sizeof(int)*patternLen);
     if(lps == NULL)
@@ -138,7 +140,7 @@ void KMP_PatternMatch(const char *inputStr, int inputStrLen, const char *pattern
         {
             if(j == patternLen-1)
             {
-                printf("Find the %d pattern, start index is %d\n", k++, i-j);
+                printf("Find the %d pattern, start index is %d\n", ++k, i-j);
                 j = lps[j];
             }else{
                 j++;
