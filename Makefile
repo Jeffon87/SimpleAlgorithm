@@ -1,16 +1,18 @@
-objects = HeapSort.o MySort.o mytest_common.o MergeSort.o QuickSort.o KMP.o
+objects = MyTest.o HeapSort.o SelectSort.o QuickSort.o MyTestCommon.o MergeSort.o BubleSort.o TestArray.o
+## MergeSort.o QuickSort.o
 
-mytest : $(objects)
-	gcc -g -o mytest $(objects)
+ssh_mytest : $(objects)
+	gcc -g  -Wall -o ssh_mytest $(objects)
 
-HeapSort.o : algrithmtest.h
-MySort.o : algrithmtest.h
-mytest_common.o : algrithmtest.h
-MergeSort.o : algrithmtest.h
-QuickSort.o : algrithmtest.h
-KMP.o :  algrithmtest.h testarray.h
-
+##MyTestCommon.o : MyTestCommon.h
+##MyTest.o : MyTestCommon.h
+##MyDataStructure.o : MyTestCommon.h
+##MySort.o : MyTestCommon.h
+##HeapSort.o : MyTestCommon.h
+##MergeSort.o : MyTestCommon.h
+##QuickSort.o : MyTestCommon.h
+##KMP.o :  MyTestCommon.h
 
 .PHONY : clean
 clean :
-	rm myTest $(objects)
+	rm ssh_mytest $(objects)
