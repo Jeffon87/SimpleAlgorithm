@@ -1,6 +1,4 @@
-//#include "algrithmtest.h"
-#include "MyTestCommon.h"
-#include "MySort.h"
+#include "SortsCommon.h"
 
 //1，快速排序是选择一个参考元素。将数组分为两个部分，每个部分依次排列成序。然后
 //2，将数组分为两个部分，左侧元素均不小于参考元素，右侧元素均不大于参考元素。

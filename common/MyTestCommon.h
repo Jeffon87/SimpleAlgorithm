@@ -41,9 +41,9 @@ extern function MyTestSearchService(char *serviceName, int serviceNameLen);
 /* Print functions. */
 void PrintPackage(void);
 void PrintPackageList(void);
-void PrintCharArray(char *array, unsigned int arrayLength, char *flagStr);
-void PrintArray(int *array, unsigned int arrayLength, char *flagStr);
-void PrintArrayWithIdx(int *array, int left, int right, char *flagStr);
+void PrintCharArray(const char *array, unsigned int arrayLength, const char *flagStr);
+void PrintArray(int *array, unsigned int arrayLength, const char *flagStr);
+void PrintArrayWithIdx(int *array, int left, int right, const char *flagStr);
 void myMemCpy(char *a, char *b, int counts, int bPrint);
 
 #endif

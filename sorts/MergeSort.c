@@ -1,6 +1,4 @@
-//#include "algrithmtest.h"
-#include "MyTestCommon.h"
-#include "MySort.h"
+#include "SortsCommon.h"
 
 #define MYARRAYSIZE 100
 #define FELIX_DEBUG

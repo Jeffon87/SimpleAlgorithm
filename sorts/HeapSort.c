@@ -1,6 +1,4 @@
-//#include "algrithmtest.h"
-#include "MyTestCommon.h"
-#include "MySort.h"
+#include "SortsCommon.h"
 
 //堆是一个近似完全二叉树的结构，并且满足堆积性质：即：子节点的键值或索引总是大于/小于父节点。
 //堆通常是用数组来实现的，因为是完全二叉树，所以每个元素可以通过索引来随机访问。

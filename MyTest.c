@@ -1,4 +1,4 @@
-#include "MyTestCommon.h"
+#include "./common/MyTestCommon.h"
 #include <getopt.h> /* 获取参数 */
 
 extern char *optarg;         /*系统声明的全局变量 */
@@ -8,26 +8,36 @@ int main(int argc, char **argv)
 {
     int c;
     function handler = NULL;
-    char *serviceName = "MyTest.sorts.TestHeapSort";
-    int serviceNameLen = strlen(serviceName);
+    char *serviceName = NULL;
+    int serviceNameLen = 0;
 
-#if 1
-    while ((c = getopt(argc, argv, "lt")) != -1) {
-
+    //printf("Begin: optind %d, argc %d\n", optind, argc);
+    while ((c = getopt(argc, argv, "lt:")) != -1) {
         switch(c){
             case 'l': /* List the supported test. */
-                printf("option l\n");
+                //printf("option l\n");
                 PrintPackageList();
                 break;
             case 't': /* Test type */
-                printf("option t\n");
-                break;
-            default:
-                printf("Bad parameters, try \"--help\" for details\n");
-                break;                
+                //printf("option t\n");
+                serviceName = optarg;
+                if(NULL != serviceName)
+                {
+                    serviceNameLen = strlen(serviceName);
+                    //printf("The strlen(serviceName) is %d\n", serviceNameLen);
+                    break;
+                } else {
+                    fprintf(stderr, "Expected argument after options\n");
+                    exit(EXIT_FAILURE);
+                }
+
+            default:/* '?' */
+                fprintf(stderr, "Usage: %s [-t service] [-l]\n",
+                        argv[0]);
+                exit(EXIT_FAILURE);              
         }
     }
-#endif
+    //printf("End: optind %d, argc %d\n", optind, argc);
    
     handler = MyTestSearchService(serviceName, serviceNameLen);
     if(handler != NULL)

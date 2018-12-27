@@ -20,6 +20,7 @@ void insert_case4step2(struct node* n);
 void insert_case4(struct node* n);
 void insert_repair_tree(struct node* n);
 void insert_recurse(struct node* root, struct node* n);
+struct node *insert(struct node* root, struct node* n);
 
 /* 删除节点 */
 void delete_case6(struct node* n);
@@ -28,6 +29,12 @@ void delete_case4(struct node* n);
 void delete_case3(struct node* n);
 void delete_case2(struct node* n);
 void delete_case1(struct node* n);
+void delete_one_child(struct node* n);
+
+/* 替换节点. */
+void replace_node(struct node* n, struct node* child);
+
+
 
 /* Function implementation. */
 /* 1, Get relative nodes. */

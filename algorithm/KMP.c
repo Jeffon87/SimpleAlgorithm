@@ -1,7 +1,9 @@
-#include "algrithmtest.h"
-#ifdef FUNCTEST
-#include "testarray.h"
-#endif
+//#include "algrithmtest.h"
+//#ifdef FUNCTEST
+//#include "testarray.h"
+//#endif
+#include "../common/MyTestCommon.h"
+#include "../sorts/TestArray.h"
 /*
  KMP是一种模式匹配的算法. 从长串中寻找特定子串其实就是一种模式匹配.
  1, 传统的做法是每次移动一个字符来匹配,当匹配子串中含有重复的字段时,这种匹配方法会比较低效.
@@ -123,7 +125,7 @@ void KMP_PatternMatch(const char *inputStr, int inputStrLen, const char *pattern
     int k = 0;
     int *lps = NULL;
 
-    PrintCharArray(inputStr, inputStrLen, __FUNCTION__);
+    PrintCharArray(inputStr, inputStrLen, (const char*)__FUNCTION__);
     
     lps = (int*)malloc(sizeof(int)*patternLen);
     if(lps == NULL)

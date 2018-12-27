@@ -187,7 +187,7 @@ void PrintPackageList(void)
     }
 }
 
-void PrintCharArray(char *array, unsigned int arrayLength, char *flagStr)
+void PrintCharArray(const char *array, unsigned int arrayLength, const char *flagStr)
 {
     int i, k;
     int key;
@@ -202,7 +202,7 @@ void PrintCharArray(char *array, unsigned int arrayLength, char *flagStr)
     printf("\n");
 }
 
-void PrintArray(int *array, unsigned int arrayLength, char *flagStr)
+void PrintArray(int *array, unsigned int arrayLength, const char *flagStr)
 {
     int i, k;
     int key;
@@ -215,7 +215,7 @@ void PrintArray(int *array, unsigned int arrayLength, char *flagStr)
     printf("\n");
 }
 
-void PrintArrayWithIdx(int *array, int left, int right, char *flagStr)
+void PrintArrayWithIdx(int *array, int left, int right, const char *flagStr)
 {
     int i, k;
     int key;
