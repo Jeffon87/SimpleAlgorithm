@@ -89,7 +89,7 @@ void MergeSort2(int *a, int left, int right, int *b)
     }
 }
 
-void TestMergeSort(void)
+void TestMergeSort(void* input)
 {
     PrintArray(testIntArrayLong, LONGARRAYLEN, "TestMergeSort-1");
     MergeSort2(testIntArrayLong, 0, LONGARRAYLEN-1, testTmpArray);

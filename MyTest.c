@@ -41,7 +41,7 @@ int main(int argc, char **argv)
    
     handler = MyTestSearchService(serviceName, serviceNameLen);
     if(handler != NULL)
-        (*handler)();
+        (*handler)(NULL);
 
   return 0;
 }

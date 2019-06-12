@@ -52,7 +52,7 @@ static void QuickSort(int *a, int left, int right)
     }
 }
 
-void TestQuickSort(void)
+void TestQuickSort(void* input)
 {
     printf("%s: TBD\n", __FUNCTION__);
 }

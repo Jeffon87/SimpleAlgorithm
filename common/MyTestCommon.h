@@ -12,7 +12,7 @@
 
 #define MYTESTSERVICE_FILE "MyTestService.h"
 
-typedef void(*function)(void);
+typedef void(*function)(void*);
 struct serviceHandler{
     char* name;
     function handler;

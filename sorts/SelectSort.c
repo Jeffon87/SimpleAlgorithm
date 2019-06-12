@@ -1,6 +1,6 @@
 #include "SortsCommon.h"
 
-void TestSelectSort(void)
+void TestSelectSort(void* input)
 {
     printf("%s: TBD\n", __FUNCTION__);
 }

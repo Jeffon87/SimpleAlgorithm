@@ -6,7 +6,7 @@ void BubleSort(int *a, int size)
     return;
 }
 
-void TestBubleSort(void)
+void TestBubleSort(void* input)
 {
     printf("%s: TBD\n", __FUNCTION__);
 }

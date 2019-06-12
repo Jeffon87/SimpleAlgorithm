@@ -155,7 +155,7 @@ void KMP_PatternMatch(const char *inputStr, int inputStrLen, const char *pattern
 }
 #endif
 
-void TestKMP(void)
+void TestKMP(void* input)
 {
     printf("%s: TBD\n", __FUNCTION__);
 }

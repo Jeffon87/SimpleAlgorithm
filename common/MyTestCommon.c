@@ -12,7 +12,7 @@
 #define ADD_SERVICEPROVIDER_START(name)
 #define ADD_SERVICEPROVIDER_END(name)
 #define REQUEST_SERVICE(name) \
-        extern void name(void);
+        extern void name(void*);
 
 /* Declare the service functions. */
 #include MYTESTSERVICE_FILE

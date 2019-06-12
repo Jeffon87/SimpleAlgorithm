@@ -53,7 +53,7 @@ void HeapSort(int *a, int size)
     }
 }
 
-void TestHeapSort(void)
+void TestHeapSort(void* input)
 {
     //HeapSort(a_short, A_SHORT_LEN);
     printf("%s: TBD\n", __FUNCTION__);
