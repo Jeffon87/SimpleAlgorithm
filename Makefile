@@ -58,5 +58,8 @@ PREPARE1:
 $(CUR_OBJS):%.o:%.c
 	$(CC) $(CFLAGS) -c $^ -o $(ROOT_DIR)/$(OBJS_DIR)/$@
 clean:
-	@rm $(ROOT_DIR)/$(OBJS_DIR)/*.o
-	@rm -rf $(ROOT_DIR)/$(BIN_DIR)/*
+	@rm $(OBJS_DIR)/*.o
+	@rm -rf $(BIN_DIR)/*
+
+allclean:
+	@rm -rf $(BUILD_DIR)
